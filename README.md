@@ -38,7 +38,7 @@ https://github.com/OpenIntelWireless/itlwm
 - Bluetooth microphone with integrated Intel Wifi/Bluetooth (worked on BCM94360NG with Galaxy Buds?!)
 - Fibocom WWAN
 - Hibernate
-- Keyboard Nipple ;) and buttons 
+* Keyboard Nipple ;) and buttons 
 
 **Buggy:**
 Sometime after upgrading to Big Sur and/or installing newer VoodooI2c I encountered some weird trackpad behavior while trying to mark text or drag-and-drop using touchpad and two fingers. For example I would click(mark) on the begining of the text with 1 finger on the bottom left trackpad(virtual left mouseclick), and hold it..while using second finger to mark a text or drag-and-drop, but as soon as I lift the second finger (but still holding first finger bottom left (aka virtual left mouse press area)) the text gets unmarked (or drag and drop gets - dropped) as If I removed my first finger from bottom left(I didnt :). IDK why or when it started to happen but It annoys me alot :/. Worked perfectly on Catalina (or older OpenCore/VoodooI2C). If anybody figures it out, please let me know!
