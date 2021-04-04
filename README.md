@@ -1,44 +1,50 @@
 # HP EliteBook 840 G6 Hackintosh 
-**Big Sur 11.2.3** & **OpenCore 0.6.8**
+##Big Sur 11.2.3 & OpenCore 0.6.8
 
-My config:
-Intel i5 8265U (UHD 620)
+* My config: Intel i5 8265U (UHD 620)
 https://www.notebookcheck.net/HP-EliteBook-840-G6-6XD76EA.441613.0.html
+* BigSur/Windows10/Ubuntu multiboot with OpenCanopy GUI using this theme (https://github.com/tekteq/opencanopy-minimal-theme)
+* FileVault/BitLocker/LUKS compatible and working
 
-**Based on work done by:**
+**Based on the work done by:**
 - https://github.com/kecinzer/hpelitebook850g5-opencore
 - https://github.com/Joaotcs/Hackintosh-Elitebook-8x0-g5
-- r/hackintosh reddit posts by forgotten hero that helped me with my iGPU :)
+- r/hackintosh reddit post by forgotten hero that helped me with iGPU :)
 - Dortania'a Guide of all guides
 - forums, trial and error, etc..
 
-I didn't fork @kecinzer or @Joaotcs repo's since I didnt keep track of all changes made from the beginning, but most of the heavy lifting was done by them. So FW your praises to them :)
+I didn't fork @kecinzer or @Joaotcs repo's since I didnt keep track of all the changes I made from the beginning, but most of the heavy lifting was done by them.
 
 ##Changes made from kecinzer repo:
 - SMBIOS changed to MacBookPro 15,2 since my CPU is the most similar to this series
-- Since SMBIOS changed CPU also changed from CP00 to PR00, so had to modify SSDT-PLUG for PR00 
+- Since SMBIOS changed - CPU also changed from CP00 to PR00, so had to modify SSDT-PLUG for PR00 
 - Fixed sound - ALC215 layout-id 18 for HP 830 G6 thanks to 965987400abc
-- Fixed iGPU patches with the help of forgotten hero from reddit/hackintosh, added some more atributes that fixed external HDMI and DP output from HP UltraSlim dock and wake from sleep issues
-- Created new USBPorts.kext using Hackintool until I found combo that works great with HP UltraSlim dock USB's and doesn't break sleep
+- Fixed display backlight control with SSDT-PNLF-CFL.aml
+- iGPU patching for Whiskey Lake UHD620 with the help from a reddit/hackintosh post by forgotten hero, added some more atributes that fixed external HDMI and DP output from HP UltraSlim dock and wake from sleep issues
+- Created new USBPorts.kext (since different SMBIOS changed USB mappings) using Hackintool. Works great with HP UltraSlim dock USB's and doesn't break sleep
 - Created custom CPUFriend based on Fewt's fork of CPUFriendFriend, using MacBook Air values for better battery life
-- Added SSDT-XOSI for trackpad fix
-- Configured OpenCanopy and custom icons
+- Added SSDT-XOSI for trackpad fix (not using @Joaotcs/kecinzer patches since it didn't work for this trackpad)
+- Configured OpenCanopy with custom theme - opencanopy-minimal-theme
 - New OpenCore secure boot options not used (https://github.com/kecinzer/hpelitebook850g5-opencore/tree/master/secureboot)
 - Using alpha Airportitlwm.kext for stock Intel Wifi 
 https://github.com/OpenIntelWireless/itlwm
+- SMBIOS config options to support Windows 10 (multi-)booting using Opencore loader with no issues (working great so far, no issues with major version updates/licence/devices not working..)
+- Removed @kecinzer's SSDT-INPUT.aml to fix brightness special keys, since his custom remapping wasn't valid for this laptop (if brightness keys still dont work hold power button for 30 sec - thanks to @borygo77 - https://github.com/kecinzer/hpelitebook850g5-opencore/issues/22)
 
 ##**BIOS/UEFI:**
-- **Upgrade your BIOS to latest version!**.
-- **Set iGPU to 64MB in BIOS***
-- **Generate your own serial etc. https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#generate-a-new-serial**
+- **Upgrade your BIOS to latest version!**
+- **Set iGPU to 64MB in BIOS**
+- **Generate your own serial, UUID, etc.** 
+https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#generate-a-new-serial
+- **Disable Secure Boot**
 
 
 **Almost everything works except:**
-- Internal microphone and 3.5mm microphone input(only sound output works)
-- Bluetooth microphone with integrated Intel Wifi/Bluetooth (worked on BCM94360NG with Galaxy Buds?!)
-- Fibocom WWAN
-- Hibernate
-* Keyboard Nipple ;) and buttons 
+* Internal microphone and 3.5mm microphone input(only sound output works)
+* Bluetooth microphone with integrated Intel Wifi/Bluetooth (worked on BCM94360NG with Galaxy Buds!?)
+* Fibocom WWAN
+* Hibernate (Sleep working great!)
+* Keyboard nipple and buttons  
 
 **Buggy:**
-Sometime after upgrading to Big Sur and/or installing newer VoodooI2c I encountered some weird trackpad behavior while trying to mark text or drag-and-drop using touchpad and two fingers. For example I would click(mark) on the begining of the text with 1 finger on the bottom left trackpad(virtual left mouseclick), and hold it..while using second finger to mark a text or drag-and-drop, but as soon as I lift the second finger (but still holding first finger bottom left (aka virtual left mouse press area)) the text gets unmarked (or drag and drop gets - dropped) as If I removed my first finger from bottom left(I didnt :). IDK why or when it started to happen but It annoys me alot :/. Worked perfectly on Catalina (or older OpenCore/VoodooI2C). If anybody figures it out, please let me know!
+Sometime after upgrading to Big Sur and/or installing newer VoodooI2c I encountered some weird trackpad behavior while trying to mark text or drag-and-drop using touchpad and two fingers. For example I would click(mark) on the begining of the text with 1st finger press on the bottom left trackpad(virtual left mouseclick), and hold it..while using 2nd finger to mark text (or drag-and-drop), but as soon as I lift the 2nd finger (but still holding first finger bottom left) the text gets unmarked (or drag and drop gets - dropped) as if I removed my 1st finger from bottom left(I didnt :). IDK why or when it started to happen but it annoys me alot :/. Worked perfectly on Catalina before(or older OpenCore/VoodooI2C). If anybody figures it out, please let me know!!!
