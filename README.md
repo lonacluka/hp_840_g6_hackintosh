@@ -1,5 +1,5 @@
 # HP EliteBook 840 G6 Hackintosh 
-##Big Sur 11.2.3 & OpenCore 0.6.8
+##Big Sur 11.2.3 & OpenCore 0.6.7
 
 * My config: Intel i5 8265U (UHD 620)
 https://www.notebookcheck.net/HP-EliteBook-840-G6-6XD76EA.441613.0.html
@@ -29,7 +29,7 @@ I didn't fork @kecinzer or @Joaotcs repo's since I didnt keep track of all the c
 - Using alpha Airportitlwm.kext for stock Intel Wifi 
 https://github.com/OpenIntelWireless/itlwm
 - SMBIOS config options to support Windows 10 (multi-)booting using Opencore loader with no issues (working great so far, no issues with major version updates/licence/devices not working..)
-- Removed @kecinzer's SSDT-INPUT.aml to fix brightness special keys, since his custom remapping wasn't valid for this laptop (if brightness keys still dont work hold power button for 30 sec - thanks to @borygo77 - https://github.com/kecinzer/hpelitebook850g5-opencore/issues/22)
+- Removed @kecinzer's SSDT-INPUT.aml to fix brightness up/down special keys, since his custom remapping wasn't valid for this laptop (if brightness keys still dont work just hold power button for 30 sec - thanks to @borygo77 - https://github.com/kecinzer/hpelitebook850g5-opencore/issues/22)
 
 ##**BIOS/UEFI:**
 - **Upgrade your BIOS to latest version!**
