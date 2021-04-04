@@ -1,5 +1,5 @@
 # HP EliteBook 840 G6 Hackintosh 
-#Big Sur 11.2.3 & OpenCore 0.6.7
+**Big Sur 11.2.3 & OpenCore 0.6.7**
 
 * My config: Intel i5 8265U (UHD 620)
 https://www.notebookcheck.net/HP-EliteBook-840-G6-6XD76EA.441613.0.html
@@ -15,7 +15,7 @@ https://www.notebookcheck.net/HP-EliteBook-840-G6-6XD76EA.441613.0.html
 
 I didn't fork @kecinzer or @Joaotcs repo's since I didnt keep track of all the changes I made from the beginning, but most of the heavy lifting was done by them.
 
-#Changes made from kecinzer repo:
+**Changes made from kecinzer repo:**
 - SMBIOS changed to MacBookPro 15,2 since my CPU is the most similar to this series
 - Since SMBIOS changed - CPU also changed from CP00 to PR00, so had to modify SSDT-PLUG for PR00 
 - Fixed sound - ALC215 layout-id 18 for HP 830 G6 thanks to 965987400abc
@@ -27,11 +27,11 @@ I didn't fork @kecinzer or @Joaotcs repo's since I didnt keep track of all the c
 - Configured OpenCanopy with custom theme - opencanopy-minimal-theme
 - New OpenCore secure boot options not used (https://github.com/kecinzer/hpelitebook850g5-opencore/tree/master/secureboot)
 - Using alpha Airportitlwm.kext for stock Intel Wifi 
-https://github.com/OpenIntelWireless/itlwm
+httpgit coms://github.com/OpenIntelWireless/itlwm
 - SMBIOS config options to support Windows 10 (multi-)booting using Opencore loader with no issues (working great so far, no issues with major version updates/licence/devices not working..)
 - Removed @kecinzer's SSDT-INPUT.aml to fix brightness up/down special keys, since his custom remapping wasn't valid for this laptop (if brightness keys still dont work just hold power button for 30 sec - thanks to @borygo77 - https://github.com/kecinzer/hpelitebook850g5-opencore/issues/22)
 
-#**BIOS/UEFI:**
+**BIOS/UEFI:**
 - **Upgrade your BIOS to latest version!**
 - **Set iGPU to 64MB in BIOS**
 - **Generate your own serial, UUID, etc.** 
