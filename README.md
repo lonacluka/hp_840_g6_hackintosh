@@ -40,7 +40,9 @@ https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#genera
 
 **Almost everything works except:**
 * Internal microphone and 3.5mm microphone input(only sound output works)
-* Bluetooth microphone with integrated Intel Wifi/Bluetooth (worked on BCM94360NG with Galaxy Buds!?)
+* Bluetooth microphone with integrated Intel Wifi/Bluetooth (worked on BCM94360NG with Galaxy Buds)
+note: Mic works but only after soft rebooting from Windows, after sleep stops working. Hopefully they can fix this issue in IntelBluetoothFirmware kext
+https://github.com/OpenIntelWireless/IntelBluetoothFirmware/issues/262
 * Fibocom WWAN
 * Hibernate (Sleep working great!)
 * Keyboard nipple and buttons  
