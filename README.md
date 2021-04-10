@@ -37,6 +37,10 @@ I didn't fork @kecinzer or @Joaotcs repo's since I didnt keep track of all the c
 https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#generate-a-new-serial
 - **Disable Secure Boot**
 
+**After Install:**
+- run one-key-hdpi script to enable hidpi resolution with 1,3,1 options when asked (https://github.com/xzhih/one-key-hidpi) 
+- set hidpi resolution using RDM tool (https://github.com/usr-sse2/RDM), for me 1680x945 seems the best
+
 
 **Almost everything works except:**
 * Internal microphone and 3.5mm microphone input(only sound output works)
