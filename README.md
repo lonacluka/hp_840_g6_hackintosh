@@ -9,7 +9,7 @@ https://www.notebookcheck.net/HP-EliteBook-840-G6-6XD76EA.441613.0.html
 **Based on the work done by:**
 - https://github.com/kecinzer/hpelitebook850g5-opencore
 - https://github.com/Joaotcs/Hackintosh-Elitebook-8x0-g5
-- r/hackintosh reddit post by forgotten hero that helped me with iGPU :)
+- r/hackintosh reddit post by @LGariv
 - Dortania's Guide of all guides
 - forums, trial and error, etc..
 
@@ -20,7 +20,7 @@ I didn't fork @kecinzer or @Joaotcs repo's since I didnt keep track of all the c
 - Since SMBIOS changed - CPU also changed from CP00 to PR00, so had to modify SSDT-PLUG for PR00 
 - Fixed sound - ALC215 layout-id 18 for HP 830 G6 thanks to 965987400abc
 - Fixed display backlight control with SSDT-PNLF-CFL.aml
-- iGPU patching for Whiskey Lake UHD620 with the help from a reddit/hackintosh post by forgotten hero, added some more atributes that fixed external HDMI and DP output from HP UltraSlim dock and wake from sleep issues
+- iGPU patching for Whiskey Lake UHD620 with the help from a reddit/hackintosh post by @LGariv (https://www.reddit.com/r/hackintosh/comments/hu46xm/fix_hdmi_port_and_possibly_others_not_working_on/), added some more device atributes that fixed external HDMI and DP output from HP UltraSlim dock and wake from sleep issues
 - Created new USBPorts.kext (since different SMBIOS changed USB mappings) using Hackintool. Works great with HP UltraSlim dock USB's and doesn't break sleep
 - Created custom CPUFriend based on Fewt's fork of CPUFriendFriend, using MacBook Air values for better battery life
 - Added SSDT-XOSI for trackpad fix (not using @Joaotcs/kecinzer patches since it didn't work for this trackpad)
