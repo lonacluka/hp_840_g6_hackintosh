@@ -40,6 +40,7 @@ https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#genera
 **After Install:**
 - run one-key-hdpi script to enable hidpi resolution with 1,3,1 options when asked (https://github.com/xzhih/one-key-hidpi) 
 - set hidpi resolution using RDM tool (https://github.com/usr-sse2/RDM), for me 1680x945 seems the best
+- disable Force Click in System Pref -> Trackad -> Point and Click (and enable Secondary Click aka Right click if you wish) 
 
 
 **Almost everything works except:**
@@ -53,3 +54,8 @@ https://github.com/OpenIntelWireless/IntelBluetoothFirmware/issues/262
 
 **Buggy:**
 Sometime after upgrading to Big Sur and/or installing newer VoodooI2c I encountered some weird trackpad behavior while trying to mark text or drag-and-drop using touchpad and two fingers. For example I would click(mark) on the begining of the text with 1st finger press on the bottom left trackpad(virtual left mouseclick), and hold it..while using 2nd finger to mark text (or drag-and-drop), but as soon as I lift the 2nd finger (but still holding first finger bottom left) the text gets unmarked (or drag and drop gets - dropped) as if I removed my 1st finger from bottom left(I didnt :). IDK why or when it started to happen but it annoys me alot :/. Worked perfectly on Catalina before(or older OpenCore/VoodooI2C). If anybody figures it out, please let me know!!!
+
+**Color Banding:**
+If you are lucky as I am and decided to upgrade your screen from stock 200nits to 400nits one (CMN14E0/N140HCA-GA3), or live outside central/eastern EU where you get decent lcd panel OOB.. you are out of luck if you are sensitive to screen banding like I am :) Your Launchpad and many apps will display banding artefacts since this screen is 6bits (262K colors) and not 8bit (16M colors). Not that your eyes will see the difference (in Windows :) but in MacOS every iGPU after Skylake will expect a minimum of 8bit screen and will not allow dithering to show correct color on 6bit screen. Only option is to spoof Skylake iGPU but that breaks sleep and breaks backlight control (stuck at 100% backlight). There is no fix for this as of now. If you want to try this config open an issue and I will send you updated EFI, but breaks sleep, no output after sleep (you have to manually restart -> hold power button), and no backlight control. But the color issue is fixed though :) 
+![20210411_154013 (1)](https://user-images.githubusercontent.com/69514506/115157322-ea30df80-a088-11eb-83d3-f42e02507671.jpg)
+Screenshot is from here -> Gradients test https://www.eizo.be/monitor-test/
