@@ -1,5 +1,5 @@
 # HP EliteBook 840 G6 Hackintosh 
-**Big Sur 11.2.3 & OpenCore 0.6.8**
+**Big Sur 11.3 & OpenCore 0.6.8**
 
 * My config: Intel i5 8265U (UHD 620)
 https://www.notebookcheck.net/HP-EliteBook-840-G6-6XD76EA.441613.0.html
