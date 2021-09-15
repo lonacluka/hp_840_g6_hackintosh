@@ -1,3 +1,6 @@
+# Archived. I sold this laptop.
+
+
 # HP EliteBook 840 G6 Hackintosh 
 **Big Sur 11.4 & OpenCore 0.7.0**
 
